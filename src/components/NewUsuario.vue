@@ -1,13 +1,13 @@
 <script setup>
-import { useUsuariosStores } from '@/stores/usuarios'
+import { useUsuariosStore } from '@/stores/usuarios'
 import { ref } from 'vue'
 
-const useUsuariosStore = useUsuariosStores()
+const usuariosStore = useUsuariosStore()
 const nombre = ref('')
 const correo = ref('')
 function handleAddUsuario() {
   //llamado función asincrona de nuestro store
-  useUsuariosStore.addUsuario({
+  usuariosStore.addUsuario({
     nombre: nombre.value,
     correo: correo.value
   })
@@ -40,6 +40,7 @@ function handleAddUsuario() {
         v-model="correo"
         placeholder="Ingresa tu correo"
       />
+      <button type="submit">Submit</button>
     </div>
   </form>
 </template>

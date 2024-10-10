@@ -5,7 +5,7 @@ import { ref } from 'vue'
 import { $db } from '@/firebaseApp'
 import { collection, onSnapshot, addDoc, doc, deleteDoc } from 'firebase/firestore'
 
-export const useUsuariosStores = defineStore('usuarios', () => {
+export const useUsuariosStore = defineStore('usuarios', () => {
   const usuarios = ref([])
   const usuariosRef = collection($db, 'usuarios') //collection son todos los registros de la colección en cambio, documento es un registro de una colección
 
